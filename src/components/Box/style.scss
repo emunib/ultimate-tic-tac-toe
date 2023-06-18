@@ -1,10 +1,12 @@
 .box {
-  width: 4rem;
-  height: 4rem;
+  width: 4.5rem;
+  height: 4.5rem;
   border: black 1px solid;
   font-size: 3rem;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
   align-items: center;
+  justify-self: center;
+  align-self: center;
 }
