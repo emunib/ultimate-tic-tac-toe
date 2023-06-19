@@ -2,19 +2,18 @@ import React, {useState} from 'react';
 import Box from '../Box';
 import './style.scss';
 
-function Board({winner, checkWinner}) {
+function Board({isOpen, turn, winner, checkWinner, makeMove}) {
     const [values, setValues] = useState(Array(9).fill(null));
-    const [isXTurn, setIsXTurn] = useState(true);
 
     function handleClick(i) {
-        if (winner || values[i]) return;
+        if (!isOpen || winner || values[i]) return;
 
         const nextValues = [...values];
-        nextValues[i] = isXTurn ? 'x' : 'o';
+        nextValues[i] = turn;
 
         setValues(nextValues);
         checkWinner(nextValues);
-        setIsXTurn(isXTurn => !isXTurn);
+        makeMove(i)
     }
 
     return (

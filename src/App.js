@@ -4,6 +4,8 @@ import './style.scss';
 
 function App() {
     const [boards, setBoards] = useState(Array(9).fill(null));
+    const [isBoardOpen, setIsBoardOpen] = useState(Array(9).fill(true));
+    const [isXTurn, setIsXTurn] = useState(true);
 
     function checkWinner(board, values) {
         const lines = [
@@ -26,9 +28,25 @@ function App() {
         }
     }
 
+    function makeMove(i) {
+        setIsXTurn(prevState => !prevState);
+
+        let nextIsBoardOpen;
+
+        if (boards[i]) {
+            nextIsBoardOpen = boards.map(board => board === null);
+        } else {
+            nextIsBoardOpen = Array(9).fill(false);
+            nextIsBoardOpen[i] = true;
+        }
+
+        setIsBoardOpen(nextIsBoardOpen);
+    }
+
     return (
         <>
-            {boards.map((board, i) => <Board key={i} winner={board} checkWinner={(values) => checkWinner(i, values)}/>)}
+            {boards.map((board, i) => <Board key={i} isOpen={isBoardOpen[i]} winner={board} turn={isXTurn ? 'x' : 'o'}
+                                             checkWinner={(values) => checkWinner(i, values)} makeMove={makeMove}/>)}
         </>
     );
 }
