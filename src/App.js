@@ -44,10 +44,10 @@ function App() {
     }
 
     return (
-        <>
+        <div className={"main"}>
             {boards.map((board, i) => <Board key={i} isOpen={isBoardOpen[i]} winner={board} turn={isXTurn ? 'x' : 'o'}
                                              checkWinner={(values) => checkWinner(i, values)} makeMove={makeMove}/>)}
-        </>
+        </div>
     );
 }
 

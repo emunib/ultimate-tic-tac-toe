@@ -18,7 +18,7 @@ function Board({isOpen, turn, winner, checkWinner, makeMove}) {
 
     return (
         <div className="board">
-            {values.map((val, i) => <Box key={i} value={val} onBoxClick={() => handleClick(i)}/>)}
+            {values.map((turn, i) => <Box key={i} turn={turn} onBoxClick={() => handleClick(i)}/>)}
         </div>
     );
 }
