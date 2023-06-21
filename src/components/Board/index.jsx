@@ -13,11 +13,11 @@ function Board({isOpen, turn, winner, checkWinner, makeMove}) {
 
         setValues(nextValues);
         checkWinner(nextValues);
-        makeMove(i)
+        makeMove(i);
     }
 
     return (
-        <div className="board">
+        <div className={`board ${isOpen ? '' : 'board--closed'}`}>
             {values.map((turn, i) => <Box key={i} turn={turn} onBoxClick={() => handleClick(i)}/>)}
         </div>
     );
