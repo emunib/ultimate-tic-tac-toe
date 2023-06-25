@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import Box from '../Box';
 import './style.scss';
 
-function Board({isOpen, turn, winner, checkWinner, makeMove}) {
+function Board({isOpen, turn, winner, makeMove}) {
     const [values, setValues] = useState(Array(9).fill(null));
 
     function handleClick(i) {
@@ -14,8 +14,7 @@ function Board({isOpen, turn, winner, checkWinner, makeMove}) {
         nextValues[i] = turn;
 
         setValues(nextValues);
-        checkWinner(nextValues);
-        makeMove(i);
+        makeMove(nextValues, i);
     }
 
     return (
