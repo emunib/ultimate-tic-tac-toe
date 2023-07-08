@@ -1,8 +1,8 @@
 // screen sizes
-$mobile-width: 320px;
-$tablet-size: 480px;
-$laptop-size: 768px;
-$desktop-size: 1280px;
+$size-mobile: 320px;
+$size-tablet: 480px;
+$size-laptop: 768px;
+$size-desktop: 1280px;
 
 // spacing sizes
 $space-xxs: 4px;
@@ -10,5 +10,13 @@ $space-xs: 6px;
 $space-sm: 9px;
 $space-md: 13.5px;
 $space-lg: 20px;
+
+// colors
+$color-bg-light: #34495e;
+$color-bg: #2c3e50;
+$color-bg-dark: #263645;
+$color-bg-darkest: #18232d;
+$color-x: #ff4141;
+$color-o: #0092ff;
 
 

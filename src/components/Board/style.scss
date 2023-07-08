@@ -5,7 +5,7 @@
   position: relative;
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-  background-color: #2c3e50;
+  background-color: $color-bg;
 
   &--closed {
     filter: saturate(60%);
@@ -19,12 +19,12 @@
 
     &--x {
       height: 100%;
-      color: #ff4141;
+      color: $color-x;
     }
 
     &--o {
       height: 80%;
-      color: #0092ff;
+      color: $color-o;
     }
   }
 
