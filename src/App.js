@@ -27,13 +27,21 @@ function App() {
     }
 
     function makeMove(values, clickedBox, clickedBoard) {
-        const winner = checkWinner(values);
+        const boardWinner = checkWinner(values);
 
         const nextBoards = [...boards];
 
-        if (winner) {
-            nextBoards[clickedBoard] = winner;
+        if (boardWinner) {
+            nextBoards[clickedBoard] = boardWinner;
             setBoards(nextBoards);
+
+            const gameWinner = checkWinner(nextBoards);
+
+            if (gameWinner) {
+                setIsBoardOpen(Array(9).fill(false));
+                alert(`${gameWinner} won the game`);
+                return;
+            }
         }
 
         let nextIsBoardOpen;
