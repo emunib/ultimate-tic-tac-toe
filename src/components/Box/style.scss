@@ -14,14 +14,9 @@
   background-color: $color-bg-light;
   border-radius: 4px;
   aspect-ratio: 1 / 1;
+}
 
-  &__x-icon {
-    height: 70%;
-    color: $color-x;
-  }
-
-  &__o-icon {
-    height: 59%;
-    color: $color-o;
-  }
+.node {
+  width: 100%;
+  height: 100%;
 }

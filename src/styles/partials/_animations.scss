@@ -1,0 +1,38 @@
+@keyframes bounce-in {
+  0% {
+    transform: scale3d(0, 0, 1);
+    animation-timing-function: ease-in;
+  }
+  19% {
+    transform: scale3d(0.5, 0.5, 1);
+  }
+  38% {
+    transform: scale3d(1, 1, 1);
+    animation-timing-function: ease-out;
+  }
+  55% {
+    transform: scale3d(0.7, 0.7, 1);
+    animation-timing-function: ease-in;
+  }
+  72% {
+    transform: scale3d(1, 1, 1);
+    animation-timing-function: ease-out;
+  }
+  81% {
+    transform: scale3d(0.84, 0.84, 1);
+    animation-timing-function: ease-in;
+  }
+  89% {
+    transform: scale3d(1, 1, 1);
+    animation-timing-function: ease-out;
+  }
+  95% {
+    transform: scale3d(0.95, 0.95, 0.95);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+}

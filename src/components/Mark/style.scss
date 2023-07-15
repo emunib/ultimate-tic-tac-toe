@@ -1,0 +1,21 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/animations" as *;
+
+.mark {
+
+  &--enter {
+    animation: bounce-in 500ms;
+  }
+
+  &--x {
+    height: 70%;
+    color: $color-x;
+  }
+
+  &--o {
+    height: 59%;
+    color: $color-o;
+  }
+}
+
+
