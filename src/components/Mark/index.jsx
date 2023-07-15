@@ -5,9 +5,9 @@ import React, {useRef} from 'react';
 import {CSSTransition} from 'react-transition-group';
 import './style.scss';
 
-function Mark({turn}) {
+function Mark({turn, baseClass}) {
     const nodeRef = useRef(null);
-    const classes = clsx('mark', turn && `mark--${turn}`);
+    const classes = clsx(baseClass, 'mark', turn && [`${baseClass}--${turn}`, `mark--${turn}`]);
     const icon = turn === 'x' ? faXmark : faO;
 
     return (

@@ -6,7 +6,7 @@ function Box({turn, onBoxClick}) {
 
     return (
         <div className={'box'} onClick={onBoxClick}>
-            <Mark turn={turn}/>
+            <Mark turn={turn} baseClass={'box__icon'}/>
         </div>
     );
 }

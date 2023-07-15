@@ -1,7 +1,6 @@
-import {faO, faXmark} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import React, {useState} from 'react';
 import Box from '../Box';
+import Mark from '../Mark';
 import './style.scss';
 
 function Board({isOpen, turn, winner, makeMove}) {
@@ -22,8 +21,9 @@ function Board({isOpen, turn, winner, makeMove}) {
             <div className={`board ${isOpen ? '' : 'board--closed'} ${winner ? `board--won-${winner}` : ''}`}>
                 {values.map((turn, i) => <Box key={i} turn={turn} onBoxClick={() => handleClick(i)}/>)}
             </div>
-            {winner === 'x' && <FontAwesomeIcon className={'board__icon board__icon--x'} icon={faXmark}/>}
-            {winner === 'o' && <FontAwesomeIcon className={'board__icon board__icon--o'} icon={faO}/>}
+            <div className={'board__icon-wrapper'}>
+                <Mark turn={winner} baseClass={'board__icon'}/>
+            </div>
         </div>
     );
 }
