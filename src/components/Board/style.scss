@@ -10,6 +10,7 @@
 
   &--closed {
     filter: saturate(60%);
+    pointer-events: none;
   }
 
   &__icon-wrapper {

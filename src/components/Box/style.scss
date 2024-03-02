@@ -15,6 +15,10 @@
   border-radius: 4px;
   aspect-ratio: 1 / 1;
 
+  &:hover {
+    background-color: $color-bg-lightest;;
+  }
+
   &__icon {
     &--x {
       height: 70%;
