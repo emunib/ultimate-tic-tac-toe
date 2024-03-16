@@ -6,6 +6,7 @@ function App() {
     const [boards, setBoards] = useState(Array(9).fill(null));
     const [isBoardOpen, setIsBoardOpen] = useState(Array(9).fill(true));
     const [isXTurn, setIsXTurn] = useState(true);
+    const turn = isXTurn ? 'x' : 'o';
 
     function checkWinner(values) {
         const lines = [
@@ -58,10 +59,15 @@ function App() {
     }
 
     return (
-        <div className={'main'}>
-            {boards.map((board, i) => <Board key={i} isOpen={isBoardOpen[i]} winner={board} turn={isXTurn ? 'x' : 'o'}
-                                             makeMove={(values, clickedBox) => makeMove(values, clickedBox, i)}/>)}
-        </div>
+        <>
+            <h1 className={'title'}>Ultimate Tic-Tac-Toe</h1>
+            <h2 className={'sub'}>{turn}'s turn</h2>
+            <div className={'main'}>
+                {boards.map((board, i) => <Board key={i} isOpen={isBoardOpen[i]} winner={board}
+                                                 turn={turn}
+                                                 makeMove={(values, clickedBox) => makeMove(values, clickedBox, i)}/>)}
+            </div>
+        </>
     );
 }
 

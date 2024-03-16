@@ -10,7 +10,6 @@
 body {
   font-family: sans-serif;
   background-color: $color-bg-darkest;
-
 }
 
 #root {
@@ -26,7 +25,6 @@ body {
   @include tablet {
     padding: $space-lg;
   }
-
 }
 
 .main {
@@ -52,6 +50,20 @@ body {
     grid-gap: $space-md;
     padding: $space-md;
     border-radius: $space-md;
-
   }
+}
+
+.title {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 500;
+  color: #ffb75a;
+  margin-bottom: 1rem;
+}
+
+.sub {
+  font-family: "PT Sans Narrow", sans-serif;
+  font-weight: 700;
+  color: $color-x;
+  font-size: 1rem;
+  margin-bottom: .25rem;
 }
