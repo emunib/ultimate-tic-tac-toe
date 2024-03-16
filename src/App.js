@@ -7,6 +7,7 @@ function App() {
     const [isBoardOpen, setIsBoardOpen] = useState(Array(9).fill(true));
     const [isXTurn, setIsXTurn] = useState(true);
     const turn = isXTurn ? 'x' : 'o';
+    const [gameWinner, setGameWinner] = useState(null);
 
     function checkWinner(values) {
         const lines = [
@@ -36,11 +37,11 @@ function App() {
             nextBoards[clickedBoard] = boardWinner;
             setBoards(nextBoards);
 
-            const gameWinner = checkWinner(nextBoards);
+            const winner = checkWinner(nextBoards);
 
-            if (gameWinner) {
+            if (winner) {
                 setIsBoardOpen(Array(9).fill(false));
-                alert(`${gameWinner} won the game`);
+                setGameWinner(winner);
                 return;
             }
         }
@@ -61,7 +62,7 @@ function App() {
     return (
         <>
             <h1 className={'title'}>Ultimate Tic-Tac-Toe</h1>
-            <h2 className={'sub'}>{turn}'s turn</h2>
+            <h2 className={'sub'}>{gameWinner ? `${gameWinner} wins!` : `${turn}'s turn`}</h2>
             <div className={'main'}>
                 {boards.map((board, i) => <Board key={i} isOpen={isBoardOpen[i]} winner={board}
                                                  turn={turn}
